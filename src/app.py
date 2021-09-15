@@ -32,6 +32,7 @@ class Application:
     
     def __register_routes(self) -> None:
         self.app.add_url_rule(routes['index'], view_func=routes['index_controller'])
+        self.app.add_url_rule(routes['login'], view_func=routes['login_controller'])
     
     def __register_blueprints(self) -> None:
         #self.app.register_blueprint(routes['blueprint'], url_prefix="/blueprint")
