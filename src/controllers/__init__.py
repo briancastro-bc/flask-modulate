@@ -1,1 +1,1 @@
-#from index_controller import IndexController
+from .index_controller import IndexController

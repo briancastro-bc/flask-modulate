@@ -1,5 +1,5 @@
 from flask.views import MethodView
-from src.services.index_service import IndexService
+from src.services import IndexService
 
 class IndexController(MethodView):
     

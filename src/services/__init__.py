@@ -1,1 +1,1 @@
-#from index_service import IndexService
+from .index_service import IndexService
