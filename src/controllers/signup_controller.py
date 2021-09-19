@@ -1,12 +1,12 @@
-from flask import request, make_response
+from flask import request, make_response, jsonify
 from flask.views import MethodView
 from src.services import AuthService
 
-class LogInController(MethodView):
+class SignupController(MethodView):
     
     def __init__(self) -> None:
         self.auth_service = AuthService()
-    
+
     def get(self):
         pass
     
@@ -14,8 +14,9 @@ class LogInController(MethodView):
         if request.is_json:
             username = request.json['username']
             password = request.json['password']
-            return self.auth_service.signin_user(username, password)
-        response = make_response({
-            "message": "The request is invalid, please send a JSON FORMAT"
-        }, 400)
+            fullname = request.json['fullname']
+            return self.auth_service.signup_user(username, password, fullname)
+        response = make_response(jsonify({
+            "message": "invalid data from body, please send a json format"
+        }), 401)
         return response

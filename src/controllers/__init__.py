@@ -1,2 +1,3 @@
 from .index_controller import IndexController
 from .login_controller import LogInController
+from .signup_controller import SignupController
